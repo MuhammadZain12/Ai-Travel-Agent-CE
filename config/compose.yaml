@@ -1,0 +1,14 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    ports:
+      - 3306:3306
+    env_file:
+      - .env
+    volumes:
+      - ../data/mariadb_datadir:/var/lib/mysql
+
+volumes:
+  mariadb_datadir:
+    driver: local
